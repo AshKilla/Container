@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/AshKilla/cloud-join-you/router"
+	"github.com/AshKilla/cloud-join-you/util"
+)
 
 func main() {
-	fmt.Println("Welcome to cloud-join-you!")
+	ginApp := router.GetApp()
+	if err := ginApp.Run(util.GetPort()); err != nil {
+		panic(err)
+	}
 }
