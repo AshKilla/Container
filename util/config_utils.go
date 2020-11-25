@@ -5,7 +5,9 @@ import (
 	"github.com/spf13/viper"
 )
 
-/* 初始化viper工具 */
+/*
+初始化viper工具
+*/
 func init() {
 	viper.SetConfigName("config") // name of config file (without extension)
 	viper.SetConfigType("yaml")   // REQUIRED if the config file does not have the extension in the name
@@ -18,7 +20,10 @@ func init() {
 	}
 }
 
-func GetPort() string {
-	port := ":" + viper.GetString("server.port")
-	return port
+/*
+获取端口
+*/
+func GetPort() (port string) {
+	port = ":" + viper.GetString("server.port")
+	return
 }
